@@ -10,6 +10,7 @@ stages:
       - job: build
         steps:
           - task: Docker@2
+            displayName: build-img
             inputs:
               containerRegistry: 'acr-connection'
               repository: 'pythonimg'
@@ -17,6 +18,7 @@ stages:
               Dockerfile: 'Docker/docker-file/Dockerfile'
               buildContext: '$(Build.SourcesDirectory)'
           - task: Docker@2
+            displayName: push-img
             inputs:
               containerRegistry: 'acr-connection'
               repository: 'pythonimg'
