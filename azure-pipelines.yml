@@ -9,6 +9,7 @@ stages:
     jobs:
       - job: build
         steps:
+          - checkout: self
           - task: Docker@2
             displayName: build-img
             inputs:
