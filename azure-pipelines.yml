@@ -12,12 +12,10 @@ stages:
           - task: Docker@2
             inputs:
               containerRegistry: 'acr-connection'
-              repository: 'Docker'
               command: 'build'
-              Dockerfile: 'Docker/docker-file/Dockerfile'
+              Dockerfile: 'Dockerfile'
           - task: Docker@2
             inputs:
               containerRegistry: 'acr-connection'
-              repository: 'Docker'
               command: 'push'
            
