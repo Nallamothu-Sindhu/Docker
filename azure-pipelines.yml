@@ -12,10 +12,13 @@ stages:
           - task: Docker@2
             inputs:
               containerRegistry: 'acr-connection'
+              repository: 'pythonimg'
               command: 'build'
-              Dockerfile: 'Dockerfile'
+              Dockerfile: 'Docker/docker-file/Dockerfile'
+              buildContext: '$(Build.SourcesDirectory)'
           - task: Docker@2
             inputs:
               containerRegistry: 'acr-connection'
+              repository: 'pythonimg'
               command: 'push'
            
