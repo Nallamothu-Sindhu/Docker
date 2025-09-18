@@ -21,7 +21,7 @@ stages:
               containerRegistry: 'acr-connection'
               repository: 'pythonimg'
               command: 'build'
-              Dockerfile: 'Docker/docker-file/Dockerfile'
+              Dockerfile: 'docker-file/Dockerfile'
               buildContext: '$(Build.SourcesDirectory)'
           - task: Docker@2
             displayName: push-img
