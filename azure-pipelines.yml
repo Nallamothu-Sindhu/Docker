@@ -12,6 +12,9 @@ stages:
       - job: build
         steps:
           - checkout: self
+          - script: ls -R $(Build.SourcesDirectory)
+            displayName: "List repo files"
+
           - task: Docker@2
             displayName: build-img
             inputs:
